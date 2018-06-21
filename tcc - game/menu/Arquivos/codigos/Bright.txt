@@ -1,0 +1,12 @@
+uniform sampler2D bgl_RenderedTexture;
+
+uniform int bright;
+
+void main()
+{
+    vec4 color = texture2D(bgl_RenderedTexture, gl_TexCoord[0].st);
+    
+    color = color+bright*0.01;
+     
+    gl_FragColor = color; 
+}
